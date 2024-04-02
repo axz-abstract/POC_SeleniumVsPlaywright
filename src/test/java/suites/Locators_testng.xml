@@ -1,0 +1,17 @@
+<suite name="Locators Test Suite">
+    <test name="Locators Selenium">
+        <parameter name="browser" value="chrome"/>
+        <parameter name="browserVersion" value="stable"/>
+        <classes>
+            <class name="selenium.tests.Test_Locators"/>
+        </classes>
+    </test>
+    <test name="Locators Playwright">
+        <parameter name="browser" value="edge"/>
+        <parameter name="headless" value="false"/>
+        <parameter name="slow" value="300"/>
+        <classes>
+            <class name="playwright.tests.Test_Locators"/>
+        </classes>
+    </test>
+</suite>

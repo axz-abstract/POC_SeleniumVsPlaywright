@@ -1,0 +1,17 @@
+<suite name="Flows Test Suite">
+    <test name="Flows Selenium">
+        <parameter name="browser" value="chrome"/>
+        <parameter name="browserVersion" value="stable"/>
+        <classes>
+            <class name="selenium.tests.Test_Flows"/>
+        </classes>
+    </test>
+    <test name="Flows Playwright">
+        <parameter name="browser" value="edge"/>
+        <parameter name="headless" value="false"/>
+        <parameter name="slow" value="300"/>
+        <classes>
+            <class name="playwright.tests.Test_Flows"/>
+        </classes>
+    </test>
+</suite>

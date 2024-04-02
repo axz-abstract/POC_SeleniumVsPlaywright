@@ -1,0 +1,17 @@
+<suite name="Data-driven Test Suite">
+    <test name="Data-driven Selenium">
+        <parameter name="browser" value="chrome"/>
+        <parameter name="browserVersion" value="stable"/>
+        <classes>
+            <class name="selenium.tests.Test_DataDriven"/>
+        </classes>
+    </test>
+    <test name="Data-driven Playwright">
+        <parameter name="browser" value="edge"/>
+        <parameter name="headless" value="false"/>
+        <parameter name="slow" value="300"/>
+        <classes>
+            <class name="playwright.tests.Test_DataDriven"/>
+        </classes>
+    </test>
+</suite>
