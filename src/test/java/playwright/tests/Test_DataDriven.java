@@ -1,6 +1,7 @@
 package playwright.tests;
 
 import data_providers.DataProviderDefault;
+import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
 import playwright.pages.*;
 
@@ -9,6 +10,11 @@ import java.util.regex.Pattern;
 import static com.microsoft.playwright.assertions.PlaywrightAssertions.assertThat;
 
 public class Test_DataDriven extends BaseTest{
+
+    @BeforeClass
+    public void PrintName(){
+        System.out.println("Data-driven Suite");
+    }
 
     @Test(dataProvider = "Products",dataProviderClass = DataProviderDefault.class)
     public void localDataProvider(String searchText){

@@ -61,6 +61,29 @@ Para ambas herramientas se ha usado esta funcionalidad de TestNG ya que no la tr
 ### Common Flows
 Tener flujos comunes a disposicion es una buena practica para poder navegar a ciertas secciones en la plataforma, si varios tests requieren hacerlo, de esta forma se evita la duplicacion de codigo, y se navega en una sola linea. Se debe tener en cuenta si se requiere hacer un login para llegar a esa seccion por supuesto. En estos tests se navega a la seccion de Newsletter tanto haciendo un login primero como no, dependiendo los parametros que se envian a los metodos en la clase CommonFlows.
 
+## Esperas
+
+#### Selenium
+- Esperas Implicitas:
+Se declaran una sola vez con su timeout y los elementos seran buscados automaticamente con esa espera siempre
+- Esperas Explicitas:
+Se declaran para cada situacion en la que se quiera buscar un elemento bajo una condicion esperada, por lo que se proporciona el timeout y la condicion dada la cual puede ser una de la clase `ExpectedConditions` o una personalizada. Estas condiciones por lo general se refieren a presencia, visibilidad, invisibilidad de un elemento, numero de elementos para un selector, valor de un atributo en un elemento, etc.
+- Esperas Fluidas:
+Similares a las anteriores, pero se pueden modificar ciertas opciones como las excepciones a ignorar o el tiempo de frecuencia dentro del tiempo de espera total, por ejemplo configurar que en un lapso de 500ms dentro de 10 segundos se revise si se cumple la condicion dada.
+#### Playwright
+- Esperas automáticas:
+Se espera automáticamente a que los elementos sean accionables para la interacción antes de ejecutar acciones sobre ellos (por ejemplo, click(), fill(), hover()). 
+Al realizar una navegación (por ejemplo, navigate(), reload(), back(), forward()) cuando se abre una nueva página o se redirige, Playwright espera automáticamente a que se dispare el evento load o el evento que se especifique (DOMContentLoaded, networkidle, etc.).
+Espera por ejecución de JavaScript: Si se ejecuta JavaScript en la página (por ejemplo, a través de evaluate()), Playwright espera a que la promesa se resuelva antes de proceder.
+- Esperas declarativas: Esperas por condiciones especificas dentro del flujo. Algunos ejemplos:
+waitFor(): Espera a que un selector cumpla con condiciones especificadas como visibilidad, presencia, invisibilidad.
+waitForFunction(): Permite pasar una función que se evaluará en el contexto del navegador. Playwright espera a que esta función retorne un valor verdadero.
+waitForResponse() / waitForRequest(): Espera a que se realice una solicitud o se reciba una respuesta que coincida con cierto criterio, lo cual es útil para esperar la carga de recursos asíncronos.
+waitForLoadState(): Espera a que la página alcance un estado de carga específico (load, DOMContentLoaded, networkidle).
+
+##### Esperas Estaticas
+Ambas herramientas pueden implementar esperas estaticas con un tiempo de pausa determinado, pero su uso esta desaconsejado dado que puede causar fallos en las pruebas, y se aconseja usar esperas por eventos especificos .
+
 ## Assertions
 Selenium:
 - No incluidas, se debe usar un Test Runner como jUnit o TestNG

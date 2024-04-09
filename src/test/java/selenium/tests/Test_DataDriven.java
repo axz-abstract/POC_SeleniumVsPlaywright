@@ -2,10 +2,16 @@ package selenium.tests;
 
 import data_providers.DataProviderDefault;
 import org.testng.Assert;
+import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
 import selenium.pages.*;
 
 public class Test_DataDriven extends BaseTest {
+
+    @BeforeClass
+    public void PrintName(){
+        System.out.println("Data-driven Suite");
+    }
 
     @Test(dataProvider = "Products",dataProviderClass = DataProviderDefault.class)
     public void localDataProvider(String searchText){

@@ -4,6 +4,7 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.locators.RelativeLocator;
 import org.testng.Assert;
+import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
 import selenium.pages.LaptopsPage;
 import utils.WebDriverUtils;
@@ -11,6 +12,11 @@ import utils.WebDriverUtils;
 import java.util.List;
 
 public class Test_Locators extends BaseTest {
+
+    @BeforeClass
+    public void PrintName(){
+        System.out.println("Locators Suite");
+    }
 
     @Test
     public void SelectCartOfParticularProductCSSMethod(){

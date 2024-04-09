@@ -1,6 +1,7 @@
 package playwright.tests;
 
 import data_providers.DataProviderDefault;
+import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
 import playwright.pages.Newsletter_Page;
 import java.util.Map;
@@ -8,6 +9,11 @@ import java.util.Map;
 import static com.microsoft.playwright.assertions.PlaywrightAssertions.assertThat;
 
 public class Test_Flows extends BaseTest{
+
+    @BeforeClass
+    public void PrintName(){
+        System.out.println("Flows Suite");
+    }
 
     @Test(dataProvider = "Users",dataProviderClass = DataProviderDefault.class)
     public void TestFlows_PW(String user, String pass, String var_not_needed){

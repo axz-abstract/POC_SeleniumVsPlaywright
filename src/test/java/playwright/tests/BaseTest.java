@@ -55,7 +55,7 @@ public abstract class BaseTest {
 
     // Set the parameters for the test such as browser type, delay between steps (SlowMo) and headless state
     private void createBrowser(Map<String,String> parameters){
-        String headless = Optional.ofNullable(parameters.get("headless")).orElse(String.valueOf(true));
+        String headless = Optional.ofNullable(parameters.get("headless")).orElse(String.valueOf(false));
         String delay = Optional.ofNullable(parameters.get("slow")).orElse(String.valueOf(0));
         String browser_param = Optional.ofNullable(parameters.get("browser")).orElse("chrome");
 

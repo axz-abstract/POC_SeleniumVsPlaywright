@@ -9,7 +9,7 @@
     <test name="Locators Playwright">
         <parameter name="browser" value="edge"/>
         <parameter name="headless" value="false"/>
-        <parameter name="slow" value="300"/>
+        <parameter name="slow" value="500"/>
         <classes>
             <class name="playwright.tests.Test_Locators"/>
         </classes>

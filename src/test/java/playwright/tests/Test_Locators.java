@@ -3,6 +3,7 @@ package playwright.tests;
 import com.microsoft.playwright.Locator;
 import com.microsoft.playwright.options.AriaRole;
 import org.testng.Assert;
+import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
 import playwright.pages.LaptopsPage;
 import playwright.pages.NavigationBar_Page;
@@ -12,6 +13,11 @@ import java.util.List;
 import static com.microsoft.playwright.assertions.PlaywrightAssertions.assertThat;
 
 public class Test_Locators extends BaseTest{
+
+    @BeforeClass
+    public void PrintName(){
+        System.out.println("Locators Suite");
+    }
 
     String productName = "MacBook Air";
 

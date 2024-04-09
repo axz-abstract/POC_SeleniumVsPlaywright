@@ -2,6 +2,7 @@ package selenium.tests;
 
 import data_providers.DataProviderDefault;
 import org.testng.Assert;
+import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
 import selenium.pages.NewsletterPage;
 import selenium.pages.ShoppingCartPage;
@@ -12,6 +13,11 @@ import java.util.Collections;
 import java.util.Map;
 
 public class Test_Flows extends BaseTest {
+
+    @BeforeClass
+    public void PrintName(){
+        System.out.println("Flows Suite");
+    }
 
     @Test(dataProvider = "Users",dataProviderClass = DataProviderDefault.class)
     public void TryingCommonFlows1(String user,String pass,String var_not_needed) {
